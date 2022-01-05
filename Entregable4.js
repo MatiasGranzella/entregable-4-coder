@@ -1,7 +1,6 @@
 const cont = require('./class_conteiner.js');
 const express = require("express");
 const { Router } = express;
-const methodOverride = require('method-override');
 
 
 const app = express();
@@ -13,7 +12,6 @@ router.use(express.json());
 router.use(express.urlencoded({extended: true}));
 app.use('/api', router);
 app.use(express.static('public'));
-app.use(methodOverride('_method'));
 
 
 
@@ -52,7 +50,7 @@ router.put('/courses/:id', (req, res) => {
 
 router.delete('/courses/:id', (req, res) => {
     console.log(req)
-    let delete_course_id = new_conteiner.deleteById(req.params.id)
+    let delete_course_id = new_conteiner.deleteById(req.query.id)
 
     if (delete_course_id != null) {
         res.json(delete_course_id)
