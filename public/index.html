@@ -29,19 +29,19 @@
     <br><hr>
 
     <h2>Modifiy Course</h2>
-    <form action="/api/courses/id?_method=PUT" method="POST">
-        <input type="hidden" name="_method" value="PUT">
+    <form action="/api/courses/:id" method="PUT">
         Id to modify: <input type="number" name="id">
         <br><br>
-        Name: <input type="text" name="name">
+        Name: <input type="text" name="name"> 
         Price: <input type="number" name="price">
         Thumbnail: <input type="text" name="thumbnail">
         <button>Send</button>
     </form> 
 
+    <br><hr>
+
     <h2>Delete Course</h2>
-    <form action="/api/courses/id?_method=DELETE" method="POST">
-        <input type="hidden" name="_method" value="DELETE">
+    <form action="/api/courses/:id" method="DELETE">
         Id: <input type="number" name="id">
         <button>Send</button>
     </form>
